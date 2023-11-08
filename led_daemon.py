@@ -44,7 +44,8 @@ if __name__ == '__main__':
             f.close()
         
         for i in range(strip.numPixels()):
-            strip.setPixelColor(i, colors[i][tick % len(colors[i])])
+            if len(colors[i]) > 0:
+                strip.setPixelColor(i, colors[i][tick % len(colors[i])])
         strip.show()
         time.sleep(0.25)
         tick = tick + 1
